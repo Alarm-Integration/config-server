@@ -1,0 +1,46 @@
+image: docker:19.03.12
+
+stages:
+  - build
+  - deploy
+
+variables:
+  CONTAINER_NAME: config-server
+  ENVIRONMENT: staging
+
+build-test:
+  image: gradle:6.9.0-jdk11
+  stage: build
+  script:
+    - gradle build
+  artifacts:
+    paths:
+      - build/libs/*.jar
+
+build-docker-image:
+  stage: build
+  script:
+    - docker login -u $DOCKER_HUB_ID -p $DOCKER_HUB_PASSWORD
+    - docker build -t $DOCKER_HUB_ID/$IMAGE_NAME .
+    - docker push $DOCKER_HUB_ID/$IMAGE_NAME
+  environment:
+    name: $ENVIRONMENT
+
+deploy-container:
+  stage: deploy
+  script:
+    - docker pull $DOCKER_HUB_ID/$IMAGE_NAME
+    - "{ docker stop $CONTAINER_NAME; docker rm $CONTAINER_NAME; } || true"
+    - "docker run -d -p $CONFIG_SERVER_PORT:$CONFIG_SERVER_PORT \
+    -v /root/yml-config-files:/yml-config-files \
+    --network $DOCKER_MESH_NETWORK \
+    --name $CONTAINER_NAME \
+    -e HOST_IP=$HOST_IP \
+    -e RABBIT_MQ_PORT=$RABBIT_MQ_PORT \
+    -e RABBIT_MQ_USERNAME=$RABBIT_MQ_USERNAME \
+    -e RABBIT_MQ_PASSWORD=$RABBIT_MQ_PASSWORD \
+    $DOCKER_HUB_ID/$IMAGE_NAME"
+
+  environment:
+    name: $ENVIRONMENT
+    url: $STAGING_SERVER
