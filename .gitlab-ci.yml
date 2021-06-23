@@ -32,7 +32,7 @@ deploy-container:
     - docker pull $DOCKER_HUB_ID/$IMAGE_NAME
     - "{ docker stop $CONTAINER_NAME; docker rm $CONTAINER_NAME; } || true"
     - "docker run -d -p $CONFIG_SERVER_PORT:$CONFIG_SERVER_PORT \
-    - v /root/yml-config-files:/yml-config-files \
+    -v /root/yml-config-files:/yml-config-files \
     --network $DOCKER_MESH_NETWORK \
     --name $CONTAINER_NAME \
     -e HOST_IP=$HOST_IP \
