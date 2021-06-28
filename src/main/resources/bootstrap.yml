@@ -1,5 +1,5 @@
 encrypt:
   key-store:
-    location: "${KEY_STORE_LOCATION}"
-    password: "${KEY_STORE_PASSWORD}"
+    location: "file:///keystore/configServerEncryptionKey.jks"W
+    password: "asdfqwer1234"
     alias: configServerEncryptionKey
