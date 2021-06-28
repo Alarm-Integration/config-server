@@ -1,0 +1,5 @@
+encrypt:
+  key-store:
+    location: "${KEY_STORE_LOCATION}"
+    password: "${KEY_STORE_PASSWORD}"
+    alias: configServerEncryptionKey

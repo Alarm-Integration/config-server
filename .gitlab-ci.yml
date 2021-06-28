@@ -45,6 +45,7 @@ deploy-container:
     - "docker run -d -p $CONFIG_SERVER_PORT:$CONFIG_SERVER_PORT \
     --network $DOCKER_MESH_NETWORK \
     --name $CONTAINER_NAME \
+    -v /root/keystore:/keystore \
     -e HOST_IP=$HOST_IP \
     -e RABBIT_MQ_PORT=$RABBIT_MQ_PORT \
     -e RABBIT_MQ_USERNAME=$RABBIT_MQ_USERNAME \
