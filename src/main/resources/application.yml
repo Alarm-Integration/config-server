@@ -4,8 +4,6 @@ server:
 spring:
   application:
     name: config-server
-  profiles:
-    active: native
   rabbitmq:
     host: "${HOST_IP}"
     port: "${RABBIT_MQ_PORT}"
@@ -14,8 +12,10 @@ spring:
   cloud:
     config:
       server:
-        native:
-          search-locations: file:///yml-config-files
+        git:
+          uri: "${GITLAB_CONFIG_SERVER_URL}"
+          username: "${GITLAB_USERNAME}"
+          password: "${GITLAB_PASSWORD}"
 
 management:
   endpoints:
