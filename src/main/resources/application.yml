@@ -4,11 +4,11 @@ server:
 spring:
   application:
     name: config-server
-  rabbitmq:
-    host: "${HOST_IP}"
-    port: "${RABBIT_MQ_PORT}"
-    username: "${RABBIT_MQ_USERNAME}"
-    password: "${RABBIT_MQ_PASSWORD}"
+#  rabbitmq:
+#    host: "${HOST_IP}"
+#    port: "${RABBIT_MQ_PORT}"
+#    username: "${RABBIT_MQ_USERNAME}"
+#    password: "${RABBIT_MQ_PASSWORD}"
   cloud:
     config:
       server:
