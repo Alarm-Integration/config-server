@@ -1,5 +1,5 @@
 encrypt:
   key-store:
     location: file:///keystore/configServerEncryptionKey.jks
-    password: "{cipher}AQBkJhrSLbn79FIuXV8+8X2f8g+CVmaOtYDzDoLoMfnYVegOqN0uYCm+0JdKYzNm4vnKxiY5okjSW9Zl1DJ9McW5WWlOTN8Xc4D9MaPNYFbBdVpO+7umGfwddT73okhM13/6nKPtzqv0M9Z2VcdVSqGjPd6ax+J76JWU2Hxxehaa8k+PjNxTY7mldsbljocyxwjqZ1cQxAhgOfxO5u6PYhKJn9vbq7IBuq2NjBIV9VWVLWnyx1nMzDqwAES5f2dvgRC5yC8fyxmUOLsTCZobpNxuvMSQ2DYLjEG0lJ+RzSUvyd9GVV6dw3kQUthqQQV3Rufv7aDQYyp+/rJX55wOUutheo0voHnu/85LiqKxrIIB1raoAXBqZoXv6ppgsTOIDgk="
+    password: asdfqwer1234
     alias: configServerEncryptionKey
