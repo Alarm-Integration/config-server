@@ -14,8 +14,8 @@ spring:
       server:
         git:
           uri: https://gitlab.gabia.com/mentoring/newbie/2021.05/mentoring-alarm/playground/yml-config-files.git
-          username: "{cipher}AQB/mV+6JxJ5u5lGPW9tPuDrX0vApgR0HMxkVyF6NqgRSnknpa7DZ+y2cRwW3jfcYKKNGMNpzIQR6LbKrsyPJ6pIBVPAT5evSx2u9LRz/8hZhfIfHiuCgYOngJ6FLRkfw/CxgSt+5FmpjX3DWhKBJ2CJZHvuzvShMKq5AY3WrmXCJCvgB7yzh7RV2BfIab0JkLHr8klGQxSQIYVOND0LshBCl3rM04863V1QC0RgtyoO0FF1fk8Kul2uA5bZhxQTV+rFqlvaFdADanC08Y76iWZAn2m1UJyC35yHaoIoTHlsT5nDGslPaIEoQSTXvXkqtVT1E1rlzPsTJ9CkP+fR3ll8fnULrJivBGoYjXpr44NufoLREJ7FCdbIYeRrJ7ByuFc="
-          password: "{cipher}AQBkIhKUdT+gsFRwmVrktHnFdtAvUHBnsgauQfFwe7LPR/OyniQ3QBwgBrtTpee094cXMY7gyHMTNWFA1fOsHPRFygtzdLr/AaJyF9Bf5YhMYla4/h3LFz7RER63Z29/zqd04zgxKQqCZlqavdvrau65g10f3wITd/e+uK/XVHh+14F1bLp04EpMsKgPa8pqKiF6ZE+k4VXYH3kY52w4LP73lrU0C0HRfPMpsxKnL3+/SNgsEYQCl18t8xGIY7J9ravjtb8AGbWRYnmo5H/LxnzvVvtDgtlzs160czKiEYGBK8hHBMS4FsozUzpo/bBBCdrT7Z3inP/3VHyI4iHg5oOiJyIdVpU6mTRIds+B8POAouiDwDrbvnD8QRD583RXrak="
+          username: "${GITLAB_USERNAME}"
+          password: "${GITLAB_PASSWORD}"
 
 management:
   endpoints:
