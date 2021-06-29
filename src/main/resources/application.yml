@@ -5,7 +5,7 @@ spring:
   application:
     name: config-server
   rabbitmq:
-    host: "${HOST_IP}"
+    host: "${RABBIT_MQ_HOST_IP}"
     port: "${RABBIT_MQ_PORT}"
     username: "${RABBIT_MQ_USERNAME}"
     password: "${RABBIT_MQ_PASSWORD}"
@@ -13,7 +13,7 @@ spring:
     config:
       server:
         git:
-          uri: "${GITLAB_CONFIG_SERVER_URL}"
+          uri: https://gitlab.gabia.com/mentoring/newbie/2021.05/mentoring-alarm/playground/yml-config-files.git
           username: "${GITLAB_USERNAME}"
           password: "${GITLAB_PASSWORD}"
 
