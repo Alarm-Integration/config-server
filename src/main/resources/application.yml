@@ -13,7 +13,7 @@ spring:
     config:
       server:
         git:
-          uri: https://gitlab.gabia.com/mentoring/newbie/2021.05/mentoring-alarm/playground/yml-config-files.git
+          uri: "${GITLAB_CONFIG_SERVER_URL}"
           username: "${GITLAB_USERNAME}"
           password: "${GITLAB_PASSWORD}"
 
