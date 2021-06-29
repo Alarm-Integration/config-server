@@ -6,7 +6,6 @@ stages:
 
 variables:
   CONTAINER_NAME: config-server
-  ENVIRONMENT: staging
 
 build:
   image: gradle:6.9.0-jdk11
@@ -33,9 +32,6 @@ build-docker-image:
     - docker login -u $DOCKER_HUB_ID -p $DOCKER_HUB_PASSWORD
     - docker build -t $DOCKER_HUB_ID/$IMAGE_NAME .
     - docker push $DOCKER_HUB_ID/$IMAGE_NAME
-  environment:
-    name: $ENVIRONMENT
-
 
 deploy:
   stage: deploy
@@ -56,7 +52,3 @@ deploy:
     -e KEY_STORE_LOCATION=$KEY_STORE_LOCATION \
     -e KEY_STORE_PASSWORD=$KEY_STORE_PASSWORD \
     $DOCKER_HUB_ID/$IMAGE_NAME"
-
-  environment:
-    name: $ENVIRONMENT
-    url: $STAGING_SERVER
